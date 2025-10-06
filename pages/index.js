@@ -20,7 +20,7 @@ const closeModal = (modal) => {
 
 // The logic in this function should all be handled in the Todo class.
 const generateTodo = (data) => {
-  const todo = new Todo(data, todo-Template);
+  const todo = new Todo(data, '#todo-template');
   todoNameEl.textContent = data.name;
   todoCheckboxEl.checked = data.completed;
 
@@ -75,4 +75,4 @@ initialTodos.forEach((item) => {
 });
 
 const TodoValidator = new FormValidator(validationConfig, addTodoForm);
-newTodoValidator.enableValidation();
+TodoValidator.enableValidation();

@@ -1,6 +1,6 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+Project app where we incorporate different ways to put together an app with different validations. 
 
 ## Functionality
 
@@ -13,5 +13,4 @@ Give a description of the technologies and techniques used. Pictures, GIFs, or s
 ## Deployment
 
 This project is deployed on GitHub Pages:
-
-- ADD LINK HERE https://github.com/seamus2855/se_project_todo-app#
+ https://github.com/seamus2855/se_project_todo-app#
