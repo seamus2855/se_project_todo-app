@@ -66,8 +66,6 @@ class FormValidator {
     });
   }
 
-// Remove disableButton function from inside the class
-
   enableValidation() {
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
