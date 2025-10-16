@@ -21,28 +21,7 @@ const closeModal = (modal) => {
 // The logic in this function should all be handled in the Todo class.
 const generateTodo = (data) => {
   const todo = new Todo(data, '#todo-template');
-  todoNameEl.textContent = data.name;
-  todoCheckboxEl.checked = data.completed;
-
-  // Apply id and for attributes.
-  // The id will initially be undefined for new todos.
-
-  // If a due date has been set, parsing this it with `new Date` will return a
-  // number. If so, we display a string version of the due date in the todo.
-  const dueDate = new Date(data.date);
-  if (!isNaN(dueDate)) {
-    todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })}`;
-  }
-
-  todoDeleteBtn.addEventListener("click", () => {
-    todoElement.remove();
-  });
-
-  return todoElement;
+  return todo.getView();
 };
 
 addTodoButton.addEventListener("click", () => {
@@ -64,15 +43,17 @@ addTodoForm.addEventListener("submit", (evt) => {
 
   const id = uuidv4();
   const values = { name, date, id };
-  const todo = generateTodo(values);
-  todosList.append(todo);
+  const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  todosList.append(todo); 
+};
   closeModal(addTodoPopup);
 });
 
-initialTodos.forEach((item) => {
+const renderTodo = (item) => {
   const todo = generateTodo(item);
-  todosList.append(todo);
-});
+  todosList.append(todo); 
+};
 
-const TodoValidator = new FormValidator(validationConfig, addTodoForm);
-TodoValidator.enableValidation();
+const todoValidator = new FormValidator(validationConfig, addTodoForm);
+todoValidator.enableValidation();
