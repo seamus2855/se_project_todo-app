@@ -3,16 +3,15 @@ class Todo {
     this._data = data;
    this._templateElement = document.querySelector(templateSelector);
   }
-}
 
-_setEventListeners() ;{
-    const todoDeleteBtn = this._todoElement.querySelector(".todo__completed");
-    todoDeleteBtn.addEventListener("change", () => {
-      this._data.completed = ! this._data.completed;
+_setEventListeners() {
+    const todoCheckbox = this._todoElement.querySelector(".todo__completed");
+    todoCheckbox.addEventListener("change", () => {
+      this._data.completed = !this._data.completed;
     });
-  }
-  
-  _generateCheckboxEl() ;{
+}
+    
+  _generateCheckboxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
     this._todoLabel = this._todoElement.querySelector(".todo__label");
     this._todoCheckboxEl.checked = this._data.completed;
@@ -20,7 +19,7 @@ _setEventListeners() ;{
     this._todoLabel.setAttribute("for", `todo-${this._data.id}`);
   }
 
-  getView() ;{
+  getView() {
     this._todoElement = this._templateElement.content
       .querySelector(".todo")
       .cloneNode(true);
@@ -52,4 +51,7 @@ _setEventListeners() ;{
     this._setEventListeners();
 
     return this._todoElement;
-  };
+  }
+}
+
+export default Todo;
