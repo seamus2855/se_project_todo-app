@@ -36,8 +36,6 @@ addTodoButton.addEventListener("click", () => {
   openModal(addTodoPopup);
 });
 
-renderTodo(values);
-todoValidator.resetForm(); // Add this line
 addTodoCloseBtn.addEventListener("click", () => {
   closeModal(addTodoPopup);
 });
@@ -53,6 +51,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const id = uuidv4();
   const values = { name, date, id };
   renderTodo(values);
+  todoValidator.resetForm(); // Add this line
   closeModal(addTodoPopup);
 });
 
