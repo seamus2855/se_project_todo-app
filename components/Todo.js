@@ -9,12 +9,11 @@ class Todo {
 _setEventListeners() {
     const todoCheckbox = this._todoElement.querySelector(".todo__completed");
     this._deleteBtnEl.addEventListener("click", () => {
-      this._handleDelete(this._completed);
-      this._remove();
+      this._handleDelete(this._data);
     });
     todoCheckbox.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
-      this._handleCheck(this._completed)
+      this._handleCheck(this._data_completed)
     });
 }
     
@@ -33,8 +32,8 @@ _setEventListeners() {
 
     const todoNameEl = this._todoElement.querySelector(".todo__name");
     const todoDate = this._todoElement.querySelector(".todo__date");
-     const todoLabel = this._todoElement.querySelector(".todo__label");
     const todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
+   this._deleteBtnEl = this._todoElement.querySelector('.todo__delete-btn');
 
     // Set todo name and completed status
     todoNameEl.textContent = this._data.name;
