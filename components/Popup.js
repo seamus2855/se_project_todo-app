@@ -1,4 +1,4 @@
-class Popup {
+class popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
     this._popupCloseBtn = this._popupElement.querySelector(".popup__close");
@@ -31,4 +31,4 @@ class Popup {
     });
   }
 }
-export default Popup;
+export default popup;
