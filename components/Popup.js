@@ -2,11 +2,9 @@ class popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
     document.addEventListener("DOMContentLoaded", () => {
-      const popup = new Popup();
     });
     this._handleEscapeCloseBound = this._handleEscapeClose.bind(this);
     document.addEventListener("DOMContentLoaded", () => {
-      const popup = new popup();
     });
   }
   _handleEscapeClose(evt) {
