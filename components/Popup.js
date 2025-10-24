@@ -1,11 +1,7 @@
-class popup {
+class Popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
-    document.addEventListener("DOMContentLoaded", () => {
-    });
     this._handleEscapeCloseBound = this._handleEscapeClose.bind(this);
-    document.addEventListener("DOMContentLoaded", () => {
-    });
   }
   _handleEscapeClose(evt) {
     if (evt.key === "Escape") {
@@ -34,4 +30,4 @@ class popup {
     });
   }
 }
-export default popup;
+export default Popup;
