@@ -9,11 +9,11 @@ class Todo {
 _setEventListeners() {
     const todoCheckbox = this._todoElement.querySelector(".todo__completed");
     this._deleteBtnEl.addEventListener("click", () => {
-      this._handleDelete(this._data);
+      this._handleDelete(this._data.completed);
     });
     todoCheckbox.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
-      this._handleCheck(this._data_completed)
+      this._handleCheck(this._data.completed)
     });
 }
     

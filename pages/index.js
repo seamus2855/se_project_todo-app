@@ -15,6 +15,23 @@ const todosList = document.querySelector(".todos__list");
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
+function handleCheck(completed) {
+  todoCounter.updateCompleted(completed);
+}
+
+const handleDelete = (completed) => {
+  todoCounter.updateTotal(false);
+  if (completed) {
+    todoCounter.updateCompleted(false);
+  }
+};
+
+const generateTodo = (data) => {
+  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
+  const todoElement = todo.getView();
+  return todoElement;
+};
+
 const section = new Section({
   items: initialTodos,
   renderer: (item) => {
@@ -48,30 +65,13 @@ const handleFormSubmit = (data) => {
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit,
-  _setEventListeners,
 });
+
 addTodoPopup.setEventListeners();
-
-function handleCheck(completed) {
-  todoCounter.updateCompleted(completed);
-}
-
-const handleDelete = (completed) => {
-  todoCounter.updateTotal(false);
-  if (completed) {
-    todoCounter.updateCompleted(false);
-  }
-};
-
-const generateTodo = (data) => {
-  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
-  const todoElement = todo.getView();
-  return todoElement;
-};
 
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
-}); 
+});
 
 const todoValidator = new FormValidator(validationConfig, addTodoForm);
 todoValidator.enableValidation();
