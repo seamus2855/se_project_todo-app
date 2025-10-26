@@ -13,4 +13,4 @@ This project had me using different Javascript as well as other techniques we le
 ## Deployment
 
 This project is deployed on GitHub Pages:
-https://github.com/seamus2855/se_project_todo-app#
+ https://github.com/seamus2855/se_project_todo-app#
